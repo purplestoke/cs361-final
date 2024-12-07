@@ -1,3 +1,31 @@
+## RECENT CHANGES
+
+  * BEFORE CHANGE TO CODE
+    - Read through each class and gathered an understanding of each classes
+        purpose and what it inherits to/from
+    - Took note of expected format and look for areas where formatting seemed
+        like a developer nightmare (get_track_json(), get_waypoint_json(), to_geojson())
+
+  * PREPARING FOR CHANGES
+    - After having an understanding of the code I then went through and looked for
+        areas I would not change
+        * TrackSegment
+
+  * MAKING CHANGES
+    - Refactored Track.get_track_json()
+        * replaced manual JSON string creation by using JSON library
+        * Improved readability and ability to maintain code by building JSON
+            object as a hash and converting to JSON string
+
+    - Refactored Waypoint.get_waypoint_json()
+      * Uses the JSON library
+      * Not manually creating a JSON string
+
+    - Refactored World.to_geojson()
+      * Uses the JSON library
+
+  * NO CHANGES MADE TO json_print.rb or tc_gis.rb
+
 ## GIS Tool
 
 Geographic Information Systems program.
@@ -48,7 +76,7 @@ the code:
 "icon": "dot"},"geometry":{"type":"Point","coordinates":[-121.5,45.6]}},
 {"type": "Feature","properties": {"title": "track 1"},"geometry": {"type
 ": "MultiLineString","coordinates": [[[45,-122],[46,-122],[46,-121]],[[4
-5,-121],[46,-121]]]}},{"type": "Feature","properties": {"title": "track 
+5,-121],[46,-121]]]}},{"type": "Feature","properties": {"title": "track
 2"},"geometry": {"type": "MultiLineString","coordinates": [[[45.5,-121],
 [45.5,-122]]]}}]}
 ```
